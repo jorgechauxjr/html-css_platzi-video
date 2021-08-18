@@ -9,23 +9,39 @@
 <style>
   body {
     margin: 0;
+    background-color: #AB88FF;
   }
-  header {
+  .header {
     /* medida relativa para que tome toda la pantalla sin importar
     el tamaño de la misma */
-    background-color: #21c08b;
+    background-color: #AB88FF;
     width: 100%;
     height: 80px;
   }
-  header img {
+  .header__img {
     width: 200px;
     margin-top: 10px;
     margin-left: 10px;
   }
+
+  .header_menu {
+    margin-right: 30px;
+  }
 </style>
 <body>
-  <header>
-    <img src="https://raw.githubusercontent.com/platzi/PlatziVideo/feature/react/src/assets/static/logo-platzi-video-BW2.png">
+  <header class="header">
+    <img class="header__img" src="https://raw.githubusercontent.com/platzi/PlatziVideo/feature/react/src/assets/static/logo-platzi-video-BW2.png">
+    <!-- papá o contenedor del menú -->
+    <div class="header__menu">
+      <div class="header__menu--profile">
+        <img src="./user-icon.png" alt="user">
+        <p>Perfil</p>
+        <ul>
+          <li><a href="/">Cuenta</a></li>
+          <li><a href="/">Cerrar Sesion</a></li>
+        </ul>
+      </div>
+    </div>
   </header>
 </body>
 </html>
