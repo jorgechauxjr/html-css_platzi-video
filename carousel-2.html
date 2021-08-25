@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,700&display=swap" rel="stylesheet">
   <title>Carrousel 2</title>
 </head>
 <style>
@@ -19,7 +20,7 @@
     padding: 30px;
     position: relative;
     /* Los elementos hijos se van a posicionar en relacion al padre */
-    background-color: red;
+    /* background-color: red; */
   }
 
   /* whitespace nowrap evita que los elemntos se pongan uno debajo del otro 
@@ -27,7 +28,7 @@
   https://www.w3schools.com/cssref/tryit.asp?filename=trycss_text_white-space
   NOTA: pero necesito display: inline-block que está en .carousel-item*/
   .carousel__container {
-    background-color: peachpuff;
+    /* background-color: peachpuff; */
     white-space: nowrap;
     margin: 70px 0px;
     padding-bottom: 10px;
@@ -44,6 +45,7 @@
     cursor: pointer;
     transition: 450ms all;
     transform-origin: center;
+    position: relative;
   }
   /* transform translate3d es para transicion
   "~"" es para que la transicion sea para el elemento aun sin el hover */
@@ -56,11 +58,37 @@
   }
   /* mayor escala al hacer hover 
   1 es valor por default, 1.5 aumenta un poquito*/
-  .carousel__container:hover .carousel-item:hover{
+  .carousel__container:hover .carousel-item:hover {
     transform: scale(1.5);
     opacity: 1;
   }
-  
+
+/* =======Estilizar===== */
+  /* Asignar tamaño a la imagen para que se vea bien y cuadre */
+  .carousel-item__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+  }
+  /* posicion absoluta para poderlo mover */
+  .carousel-item__details{
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    font-size: 10px;
+    opacity: 1;
+    transition: 450 ms opacity;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .carousel-item__details--title, .carousel-item__details--subtitle {
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+
+  }
 </style>
 <body>
   <!-- contenedor general. carousel -->
