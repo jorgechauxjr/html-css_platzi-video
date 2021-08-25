@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrousel 1</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+  }
+  /* elemento padre */
+  .carousel {
+    /* width para que ocupe la pantalla
+    overflow scroll para mover las imagenes, el carousel */
+    width: 100%;
+    overflow: scroll;
+    padding: 30px;
+    position: relative;
+    /* Los elementos hijos se van a posicionar en relacion al padre */
+    background-color: red;
+  }
+
+  /* whitespace nowrap evita que los elemntos se pongan uno debajo del otro 
+  los elementos estaran uno al lado del otro dando el efecto de carousel
+  https://www.w3schools.com/cssref/tryit.asp?filename=trycss_text_white-space
+  NOTA: pero necesito display: inline-block que está en .carousel__item*/
+  .carousel__container {
+    background-color: peachpuff;
+    white-space: nowrap;
+    margin: 70px 0px;
+    padding-bottom: 10px;
+  }
+  /* padding bottom para cuando haga hover no se vea cortado la info abajo */
+
+  .carousel__item {
+    background-color: palevioletred;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: center;
+  }
+  /* transform translate3d es para transicion
+  "~"" es para que la transicion sea para el elemento aun sin el hover */
+  .carousel__item:hover ~ .carousel__item{
+    transform: translate3d(100px, 0, 0);
+  }
+  /* opacity Al hacer hover en una card para que las otras se pongan opacas */
+  .carousel__container:hover .carousel__item{
+    opacity: 0.3;
+  }
+  /* mayor escala al hacer hover 
+  1 es valor por default, 1.5 aumenta un poquito*/
+  .carousel__container:hover .carousel__item:hover{
+    transform: scale(1.5);
+    opacity: 1;
+  }
+</style>
+<body>
+  <!-- contenedor general. carousel -->
+  <!-- BEM Block Element Modifier -->
+  <section class="carousel">
+    <div class="carousel__container">
+      <!-- este carousel__item viene a ser un elemento papa -->
+      <div class="carousel__item">
+        
+      </div>
+      <div class="carousel__item">
+        
+      </div>
+    </div>
+  </section>
+</body>
+</html>
