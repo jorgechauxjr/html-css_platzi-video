@@ -9,15 +9,17 @@
 </head>
 <body>
   <header class="header">
-    <!-- =====AGREGUÉ TABINDEX PARA ARREGLAR ACCESIBILIDAD el error salio en herramienta ANDI en tab order===== -->
+    <!-- =====AGREGUÉ TABINDEX PARA ARREGLAR ACCESIBILIDAD el error salio en herramienta ANDI en tab order https://www.ssa.gov/accessibility/andi/help/install.html===== -->
     <img tabindex="0" class="header__img" src="https://raw.githubusercontent.com/platzi/PlatziVideo/feature/react/src/assets/static/logo-platzi-video-BW2.png" alt="Platzi Video">
   </header>
   <section class="login">
     <section class="login__container">
       <h2 tabindex="0">Inicia sesion</h2>
       <form class="login__container--form">
-        <input class="input" type="text" placeholder="Correo">
-        <input class="input" type="password" placeholder="Contraseña">
+        <!-- === AGREGUÉ ARIA-LABEL PARA ARREGÑAR ACCESIBILIDAD error porque habia input pero no label para saber que debe ir allí
+        herramienta ANDI https://www.ssa.gov/accessibility/andi/help/install.html-->
+        <input aria-label="Correo" class="input" type="text" placeholder="Correo">
+        <input aria-label="Contraseña" class="input" type="password" placeholder="Contraseña">
         <button class="button">Iniciar sesión</button>
         <div class="login__container--remember-me">
           <label>
