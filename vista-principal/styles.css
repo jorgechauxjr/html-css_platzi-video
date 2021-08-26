@@ -223,3 +223,8 @@ body {
     flex-direction: column;
   }
 }
+
+/*ELIMINAR LA BARRA DE SCROLL DEBAJO DEL CAROUSEL*/
+::-webkit-scrollbar {
+    display: none;
+  }
